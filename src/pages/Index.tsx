@@ -20,6 +20,7 @@ import {
   CookingPot, WashingMachine, Refrigerator, Bus,
   ChevronLeft, ChevronRight,
 } from "lucide-react";
+import { Logo, LogoMark } from "@/components/Logo";
 
 /* ─── hooks ─────────────────────────────────────────────── */
 
@@ -217,14 +218,11 @@ const Index = () => {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div>
-            <h2 className={`font-display text-xl font-bold transition-colors duration-300 ${navScrolled ? "text-foreground" : "text-background"}`}>
-              U Vápenky
-            </h2>
-            <p className={`text-xs transition-colors duration-300 ${navScrolled ? "text-muted-foreground" : "text-background/70"}`}>
-              Ubytovna Praha
-            </p>
-          </div>
+          <Logo
+            size={34}
+            variant={navScrolled ? "dark" : "light"}
+            className="transition-colors duration-300"
+          />
 
           <div className="hidden md:flex items-center gap-8 text-sm font-body">
             {navLinks.map(({ label, href }) => (
@@ -451,7 +449,9 @@ const Index = () => {
       {/* ── footer ─── */}
       <footer className="py-16 px-6 bg-foreground">
         <div className="container mx-auto max-w-5xl text-center">
-          <h3 className="font-display text-3xl font-bold text-background mb-2">U Vápenky</h3>
+          <div className="flex justify-center mb-5">
+            <Logo size={44} variant="light" />
+          </div>
           <p className="text-background/55 font-body text-sm mb-1">
             Jaroslava Hauzrová – Ubytovna Praha-Velká Chuchle
           </p>
